@@ -1,0 +1,11 @@
+<div class="currency-list">
+  <div class="header-table">
+    <p class="title">Nombre</p>
+    <p class="title">Precio</p>
+    <p class="title">Criptomoneda</p>
+    <p class="title">Convertir</p>
+  </div>
+  <div>
+    <app-currency *ngFor="let coin of coins" [coin]="coin"></app-currency>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+@import "../scss/colors";
+
+.content {
+  display: flex;
+  margin: 32px auto;
+  max-width: 1481px;
+  flex-direction: column;
+  background-color: $white;
+  padding-block-start: 48px;
+  border: 1px solid $gray;
+  width: 100%;
+}
+
+::ng-deep {
+  .mat-tab-header {
+    border-bottom: 1px solid $gray;
+
+    .mat-tab-label-active {
+      opacity: 1;
+
+      .mat-tab-label-content {
+        color: $blue;
+        font-weight: bold;
+      }
+    }
+    .mat-tab-label {
+      width: 100%;
+      max-width: 900px;
+      font-size: 20px;
+      font-family: Helvetica Regular;
+    }
+    .mat-tab-list {
+      .mat-ink-bar {
+        background-color: $blue;
+        height: 5px;
+      }
+    }
+  }
+}
