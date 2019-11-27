@@ -9,11 +9,21 @@ import { CurrencyService } from './../../services/currency';
 export class CurrencyListComponent implements OnInit {
 
   @Input() coins: Coin[];
+  visibles: Coin[];
+  limit = 20;
+  maximum = 20;
+
   constructor(private curencyService: CurrencyService) { }
 
   ngOnInit() {
     this.curencyService.getDigitalCurrency().subscribe(response => {
       this.coins = response.prices;
+      this.visibles = this.coins.slice(0, this.limit);
     });
+  }
+
+  onScrollDown() {
+    this.maximum += this.limit;
+    this.visibles = this.visibles.concat(this.coins.slice(this.maximum - this.limit, this.maximum));
   }
 }

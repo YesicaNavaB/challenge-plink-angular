@@ -5,7 +5,9 @@
     <p class="title">Criptomoneda</p>
     <p class="title">Convertir</p>
   </div>
-  <div>
-    <app-currency *ngFor="let coin of coins" [coin]="coin"></app-currency>
+  <div class="scroll-cont" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="500"
+    [scrollWindow]="false" (scrolled)="onScrollDown()">
+    <app-currency *ngFor="let coin of visibles" [coin]="coin">
+    </app-currency>
   </div>
 </div>

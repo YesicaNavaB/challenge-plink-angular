@@ -30,7 +30,7 @@
     background-size: 30px 33px;
     position: absolute;
     background-repeat: no-repeat;
-    right: 564px;
+    right: 48px;
     top: 27px;
     transform: translateY(-50%);
   }
@@ -46,7 +46,7 @@
     background-size: 16px 20px;
     position: absolute;
     background-repeat: no-repeat;
-    right: 864px;
+    left: 52px;
     top: 27px;
     transform: translateY(-50%);
   }
@@ -78,7 +78,7 @@
 
 .btn-exchange {
   position: absolute;
-  right: 528px;
+  right: 23px;
   top: 341px;
 
   &::before {
@@ -99,4 +99,10 @@
 
 .option-select {
   display: flex;
+}
+
+.content-g {
+  margin: 60px auto;
+  width: 449px;
+  position: relative;
 }

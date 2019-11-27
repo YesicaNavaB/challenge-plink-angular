@@ -1,8 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CurrencyService } from '../../services/currency';
 import { ConvertService } from '../../services/convert.service';
-
-
 @Component({
   selector: 'app-change-currency',
   templateUrl: './change-currency.component.html',
