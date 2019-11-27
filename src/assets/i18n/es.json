@@ -1,0 +1,11 @@
+{
+  "makeChange": "REALIZAR CAMBIO",
+  "selectCurrencies": "seleccione las monedas",
+  "not": "NO",
+  "yes": "SI",
+  "name": "Nombre",
+  "price": "Precio",
+  "crypto": "Cryptomoneda",
+  "convert": "Convertir",
+  "listCurrency": "LISTADO DE MONEDAS"
+}

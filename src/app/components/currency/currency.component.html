@@ -1,9 +1,9 @@
 <div class="body-table">
   <p class="title">{{coin.name}}</p>
   <p class="title-price">{{coin.price}}</p>
-  <span *ngIf="crypto; else no" class="cont-green">SI</span>
+  <span *ngIf="crypto; else no" class="cont-green">{{'yes' | translate }}</span>
   <ng-template #no>
-    <span class="cont-red">NO</span>
+    <span class="cont-red">{{'not' | translate }}</span>
   </ng-template>
   <button class="title button-shuffle" (click)="convert()" type="button">
   </button>

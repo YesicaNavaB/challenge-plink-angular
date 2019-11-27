@@ -1,6 +1,6 @@
 <div class="content-g">
-  <h1 class="h1-style">Realizar cambio</h1>
-  <span class="label-center">seleccione las monedas</span>
+  <h1 class="h1-style">{{'makeChange' | translate }}</h1>
+  <span class="label-center"> {{'selectCurrencies' | translate }} </span>
   <div class="input-cont">
     <input type="number" [(ngModel)]="changeValue" class="input-form" #box (keyup)="onKey(box.value)" />
   </div>

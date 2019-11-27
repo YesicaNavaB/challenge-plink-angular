@@ -1,9 +1,9 @@
 <div class="currency-list">
   <div class="header-table">
-    <p class="title">Nombre</p>
-    <p class="title">Precio</p>
-    <p class="title">Criptomoneda</p>
-    <p class="title">Convertir</p>
+    <p class="title">{{'name' | translate }}</p>
+    <p class="title">{{'price' | translate }}</p>
+    <p class="title">{{'crypto' | translate }}</p>
+    <p class="title">{{'convert' | translate }}</p>
   </div>
   <div class="scroll-cont" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="500"
     [scrollWindow]="false" (scrolled)="onScrollDown()">
