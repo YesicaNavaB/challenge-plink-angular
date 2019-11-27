@@ -1,5 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +19,7 @@ import { InterceptorToken } from '../app/services/interceptor-token';
 import { CurrencyListComponent } from './components/currency-list/currency-list.component';
 import { CurrencyComponent } from './components/currency/currency.component';
 
+
 @NgModule({
   declarations: [AppComponent, ChangeCurrencyComponent, CurrencyListComponent, CurrencyComponent],
   imports: [
@@ -25,7 +28,8 @@ import { CurrencyComponent } from './components/currency/currency.component';
     NoopAnimationsModule,
     MatTabsModule,
     MatSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     CurrencyService,

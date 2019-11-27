@@ -1,9 +1,10 @@
 <div class="body-table">
   <p class="title">{{coin.name}}</p>
-  <p class="title">{{coin.price}}</p>
-  <p class="title">{{coin.price}}</p>
-  <p class="title">
-    <button class="button-shuffle" type="button">
-    </button>
-  </p>
+  <p class="title-price">{{coin.price}}</p>
+  <span *ngIf="crypto; else no" class="cont-green">SI</span>
+  <ng-template #no>
+    <span class="cont-red">NO</span>
+  </ng-template>
+  <button class="title button-shuffle" (click)="convert()" type="button">
+  </button>
 </div>

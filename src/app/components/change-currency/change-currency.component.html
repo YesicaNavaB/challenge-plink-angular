@@ -2,24 +2,24 @@
   <h1 class="h1-style">Realizar cambio</h1>
   <span class="label-center">seleccione las monedas</span>
   <div class="input-cont">
-    <input type="number" class="input-form" placeholder="1000" />
+    <input type="number" [(ngModel)]="changeValue" class="input-form" />
   </div>
   <div class="select-cont ">
-    <select class="input-form">
+    <select class="input-form" [(ngModel)]="from">
       <option *ngFor="let coin of coins" value="{{ coin.id_currency }}">{{
           coin.id_currency
       }}</option>
     </select>
   </div>
   <div class="select-cont ">
-    <select class="input-form">
+    <select class="input-form" [(ngModel)]="to">
       <option *ngFor="let coin of coins" value="{{ coin.id_currency }}">{{
           coin.id_currency
     }}</option>
     </select>
   </div>
   <div class="input-cont">
-    <input type="number" class="input-form" placeholder="1000" />
+    <input type="number" disabled=true class="input-form" [(ngModel)]="quantity" />
   </div>
   <button class="btn-exchange" type="button"></button>
 </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { CurrencyService } from '../../services/currency';
+import { ConvertService } from '../../services/convert.service';
+
 
 @Component({
   selector: 'app-change-currency',
@@ -8,11 +10,39 @@ import { CurrencyService } from '../../services/currency';
 })
 export class ChangeCurrencyComponent implements OnInit {
   @Input() coins: Coin[];
-  constructor(private curencyService: CurrencyService) { }
+  changeValue = 0;
+  to = 'BTC';
+  from = 'BTC';
+  quantity = 0;
+
+  constructor(private curencyService: CurrencyService, private convertService: ConvertService) { }
 
   ngOnInit() {
     this.curencyService.getDigitalCurrency().subscribe(response => {
       this.coins = response.prices;
+      this.coins.push({
+        id_currency: 'BTC',
+        name: 'Bitcoin',
+        price: '1',
+        crypto: '1'
+      });
     });
+
+    this.convertService.observable.subscribe(res => {
+      this.to = 'BTC';
+      this.from = res;
+      this.changeValue = 0;
+      this.convert(1, 'BTC', res);
+
+    });
+  }
+
+  convert(cant: number, from: string, to: string) {
+    this.curencyService.convert(cant, from, to)
+      .subscribe(res => {
+        if (res.success) {
+          this.quantity = res.to_quantity;
+        }
+      });
   }
 }

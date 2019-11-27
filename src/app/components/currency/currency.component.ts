@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-// import { CurrencyService } from './../../services/currency';
+import { ConvertService } from './../../services/convert.service';
 
 @Component({
   selector: 'app-currency',
@@ -9,12 +9,15 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CurrencyComponent implements OnInit {
 
   @Input() coin: Coin;
+  crypto: boolean;
 
-
-  constructor() { }
+  constructor(private convertService: ConvertService) { }
 
   ngOnInit() {
-    console.log(this.coin);
+    this.crypto = this.coin.crypto === '1';
   }
 
+  convert() {
+    this.convertService.sendMessage(this.coin.id_currency);
+  }
 }

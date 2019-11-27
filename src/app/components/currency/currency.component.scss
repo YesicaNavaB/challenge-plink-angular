@@ -1,14 +1,13 @@
 @import "../../../scss/colors";
 .body-table {
   display: flex;
-  margin: 122px auto;
+  margin: 12px auto;
   flex-direction: row;
   max-width: 1077px;
   width: 100%;
   height: 61px;
   border: 1px solid $gray;
   border-radius: 5px;
-  position: absolute;
   top: 77px;
   right: 200px;
 
@@ -18,17 +17,25 @@
     text-align-last: center;
     color: $darkgrey;
   }
+
+  .title-price {
+    flex: 2;
+    align-self: center;
+    text-align-last: center;
+    color: $blue;
+  }
 }
 .shuffle {
   width: 34px;
 }
 .button-shuffle {
+  position: relative;
   &::before {
     content: "";
     background-image: url("../../../assets/shuffle.png");
     height: 40px;
     width: 40px;
-    top: 16px;
+    top: -19px;
     right: 107px;
     background-size: 36px 36px;
     position: absolute;
@@ -43,4 +50,41 @@
   justify-content: center;
   margin: 15px 30px;
   padding: 10px;
+}
+
+.cont-green {
+  color: $green;
+  position: relative;
+  flex: 2;
+  align-self: center;
+  text-align-last: center;
+  &::before {
+    content: "";
+    border-radius: 50%;
+    width: 15px;
+    height: 12px;
+    background-color: $green;
+    justify-content: center;
+    right: 146px;
+    top: 3px;
+    position: absolute;
+  }
+}
+.cont-red {
+  color: $red;
+  position: relative;
+  flex: 2;
+  align-self: center;
+  text-align-last: center;
+  &::before {
+    content: "";
+    border-radius: 50%;
+    width: 15px;
+    height: 12px;
+    background-color: $red;
+    justify-content: center;
+    right: 146px;
+    top: 3px;
+    position: absolute;
+  }
 }

@@ -16,4 +16,9 @@ export class CurrencyService {
       {}
     );
   }
+
+  convert(quality: number, from: string, to: string) {
+    return this.http.get<any>(`${this.apiEndpoint}/convert?qty=${quality}&from=${from}&to=${to}`);
+  }
+
 }

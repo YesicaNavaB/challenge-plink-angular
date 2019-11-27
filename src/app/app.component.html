@@ -1,4 +1,4 @@
-<mat-tab-group class="content">
+<mat-tab-group class="content" [selectedIndex]="tabIndex.value" (selectedIndexChange)="tabIndex.setValue($event)">
   <mat-tab label="REALIZAR CAMBIO">
     <app-change-currency></app-change-currency>
   </mat-tab>
