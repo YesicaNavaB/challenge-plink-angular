@@ -59,4 +59,11 @@ export class ChangeCurrencyComponent implements OnInit {
         }
       });
   }
+
+  onKey(id) {
+    if (this.changeValue === 0 || this.changeValue === null) {
+      return this.quantity = 0;
+    }
+    this.convert(id, this.from, this.to);
+  }
 }

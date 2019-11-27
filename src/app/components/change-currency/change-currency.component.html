@@ -2,7 +2,7 @@
   <h1 class="h1-style">Realizar cambio</h1>
   <span class="label-center">seleccione las monedas</span>
   <div class="input-cont">
-    <input type="number" [(ngModel)]="changeValue" class="input-form" />
+    <input type="number" [(ngModel)]="changeValue" class="input-form" #box (keyup)="onKey(box.value)" />
   </div>
   <div class="select-cont ">
     <select class="input-form" [(ngModel)]="from" (change)="valueChange()">

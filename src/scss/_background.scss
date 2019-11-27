@@ -1,4 +1,18 @@
+@import "./colors";
 body {
-    background-image: url('src/assets/footer.png');
+  background-color: $soft-blue;
+  &::before {
+    content: "";
+    background-image: url("src/assets/footer.png");
+    background-repeat: no-repeat;
+    background-size: 1900px 500px;
+    background-position-y: bottom;
+    width: 1900px;
+    height: 900px;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: -1;
+    background-color: $white;
   }
-  
+}
