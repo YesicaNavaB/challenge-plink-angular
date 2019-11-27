@@ -14,7 +14,6 @@ export class CurrencyListComponent implements OnInit {
   ngOnInit() {
     this.curencyService.getDigitalCurrency().subscribe(response => {
       this.coins = response.prices;
-      console.log(this.coins);
     });
   }
 }

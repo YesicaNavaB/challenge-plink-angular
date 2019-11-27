@@ -11,7 +11,7 @@ import { ConvertService } from '../../services/convert.service';
 export class ChangeCurrencyComponent implements OnInit {
   @Input() coins: Coin[];
   changeValue = 0;
-  to = 'BTC';
+  to = 'USD';
   from = 'BTC';
   quantity = 0;
 
@@ -31,13 +31,29 @@ export class ChangeCurrencyComponent implements OnInit {
     this.convertService.observable.subscribe(res => {
       this.to = 'BTC';
       this.from = res;
-      this.changeValue = 0;
+      this.changeValue = 1;
       this.convert(1, 'BTC', res);
 
     });
   }
+  valueChange() {
+    this.convert(this.changeValue, this.from, this.to);
+  }
+
+  changeSelect() {
+    const toChange = this.to;
+    const fromChange = this.from;
+    this.to = fromChange;
+    this.from = toChange;
+    console.log(this.changeValue);
+    if (this.changeValue === 0) {
+      return this.quantity = 0;
+    }
+    this.valueChange();
+  }
 
   convert(cant: number, from: string, to: string) {
+    console.log(cant);
     this.curencyService.convert(cant, from, to)
       .subscribe(res => {
         if (res.success) {
