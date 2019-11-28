@@ -35,6 +35,9 @@ export class ChangeCurrencyComponent implements OnInit {
     });
   }
   valueChange() {
+    if (this.changeValue === 0) {
+      return this.quantity = 0;
+    }
     this.convert(this.changeValue, this.from, this.to);
   }
 
@@ -43,7 +46,6 @@ export class ChangeCurrencyComponent implements OnInit {
     const fromChange = this.from;
     this.to = fromChange;
     this.from = toChange;
-    console.log(this.changeValue);
     if (this.changeValue === 0) {
       return this.quantity = 0;
     }
@@ -51,7 +53,6 @@ export class ChangeCurrencyComponent implements OnInit {
   }
 
   convert(cant: number, from: string, to: string) {
-    console.log(cant);
     this.curencyService.convert(cant, from, to)
       .subscribe(res => {
         if (res.success) {
